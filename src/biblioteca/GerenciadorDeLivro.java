@@ -17,9 +17,14 @@ public class GerenciadorDeLivro {
 	}
 	
 	public void exibirLivros() {
-		for (Livro l: livros){
-			
-			System.out.println(l);
+		if (livros.isEmpty()) {
+			System.out.println("\nNenhum livro cadastrado\n");
+		} else {
+			for (Livro l: livros){
+				
+				System.out.println(l);
+			}
 		}
+		
 	}
 }
