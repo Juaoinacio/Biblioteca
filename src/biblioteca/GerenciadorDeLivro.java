@@ -16,12 +16,11 @@ public class GerenciadorDeLivro {
 		livros.add(livro);
 	}
 	
-	public void exibirLivros() {
+	public void exibirTodosLivros() {
 		if (livros.isEmpty()) {
 			System.out.println("\nNenhum livro cadastrado\n");
 		} else {
 			for (Livro l: livros){
-				
 				System.out.println(l);
 			}
 		}

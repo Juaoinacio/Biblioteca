@@ -9,6 +9,7 @@ public class Livro extends Acervo {
 	
 	Livro(String isbm, String autor, String editora, int paginasTotal, int idInterno, String nome, boolean emprestado){
 		
+		//Super para usar as variaveis de Acervo
 		super(idInterno, nome, emprestado);
 		
 		this.isbm = isbm;
@@ -38,8 +39,8 @@ public class Livro extends Acervo {
 	}
 	
 	// Methods gets
-	public String getIsbm() {return isbm;}
-	public String getEditora() {return editora;}
-	public int getPaginasTotal() {return paginasTotal;}
-	public String getAutor() {return autor;}
+	public String getIsbm() {return this.isbm;}
+	public String getEditora() {return this.editora;}
+	public int getPaginasTotal() {return this.paginasTotal;}
+	public String getAutor() {return this.autor;}
 }

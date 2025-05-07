@@ -9,8 +9,6 @@ public class Biblioteca {
 	private static Scanner sc = new Scanner(System.in);	
 	
 	public static void main(String[] args) {
-		
-	
 		int opcao;
 		
 		do {
@@ -34,10 +32,10 @@ public class Biblioteca {
 			switch (opcao) {
 				// Cadastro de livros
 				case 1:
-					cadastrarProduto();
+					cadastrarAcervo();
 					break;
 				case 2:
-					listarProduto();
+					listarAcervo();
 					break;
 				case 0:
 					System.out.println("Saindo do sistema...");
@@ -47,21 +45,19 @@ public class Biblioteca {
 			}
 		} while (opcao != 0);
 	}
-	public static void cadastrarProduto() {
-		
+	public static void cadastrarAcervo() {
 		int opcao;
 		
 		System.out.println("\n        Menu Acervo     ");
 		System.out.println("1 - Cadastrar Livro");
-		System.out.println("2 - Lista Livro");
-		System.out.println("3 - Cadastrar Usuário");
+		System.out.println("2 - Cadastrar revista");
+		System.out.println("0 - Para sair");
 		System.out.print("Escolha uma opção: ");
-		
 		opcao = sc.nextInt();
 		sc.nextLine();
 		
 		switch (opcao) {
-			case 1:
+			case 1: {
 				System.out.print("\nNumero do isbm: ");
 				String isbm = sc.nextLine();
 				
@@ -86,12 +82,40 @@ public class Biblioteca {
 				Livro livro = new Livro(isbm ,autor, editora, paginasTotal, idInterno, nome, false);
 		
 				acervo.cadastrarLivro(livro);
-			case 2:
-				listarProduto();
-			break;
+				
+				break;
+			}
+			
+			case 2: {
+				System.out.print("\nCodigo interno (ID): ");
+				int idInterno = sc.nextInt();
+				
+				System.out.print("Codigo interno: ");
+				int numeroDeEdicao  = sc.nextInt();
+				
+				System.out.print("Numero de paginas: ");
+				int paginasTotal = sc.nextInt();
+				
+				//Limpa o buffer do Scanner
+				sc.nextLine();
+				
+				System.out.print("Nome: ");
+				String nome = sc.nextLine();
+
+				System.out.print("Autor: ");
+				String autor = sc.nextLine();
+				
+				System.out.print("Editora: ");
+				String editora = sc.nextLine();
+				
+				Revista revista = new Revista(idInterno,numeroDeEdicao,nome,autor,editora,paginasTotal,false);
+			
+				acervo.cadastrarRevista(revista);
+				break;
+			}
 		}
 	}
-	public static void listarProduto() {
-		acervo.listarLivros();
+	public static void listarAcervo() {
+		
 	}
 }

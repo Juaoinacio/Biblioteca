@@ -3,14 +3,16 @@ package biblioteca;
 import java.util.Scanner;
 
 public class Acervo {
+	//instanciando a classe GerenciandorDeLivro
 	GerenciadorDeLivro gerenciadorDeLivro = new GerenciadorDeLivro();
+	GerenciadorDeRevista gerenciadorDeRevista = new GerenciadorDeRevista();
 	private Scanner sc = new Scanner(System.in);
 	
 	private String nome;
 	private int idInterno;
 	private boolean emprestado;
 	
-	
+	//para criar um objeto Acervo sem parametros
 	Acervo(){}
 	
 	Acervo(int idInterno, String nome, boolean emprestado){
@@ -27,9 +29,13 @@ public class Acervo {
 	public void cadastrarLivro(Livro livro) {
 		gerenciadorDeLivro.salvarLivro(livro);
 	}
-	
-	public void listarLivros() {
-		gerenciadorDeLivro.exibirLivros();
-		
+	public void listarTodosLivros() {
+		gerenciadorDeLivro.exibirTodosLivros();
+	}
+	public void cadastrarRevista(Revista revista) {
+		gerenciadorDeRevista.salvarRevista(revista);
+	}
+	public void listarTodosRevistas() {
+		gerenciadorDeRevista.exibirTodasRevistas();
 	}
 }
