@@ -37,6 +37,17 @@ public class Biblioteca {
 				case 2:
 					listarAcervo();
 					break;
+				case 3:
+					System.out.print("\nNome: ");
+					String nome = sc.nextLine();
+					
+					Usuario usuario = new Usuario(nome);
+					
+					acervo.cadastrarUsuario(usuario);
+					break;
+				case 4:
+					acervo.listarUsuarios();
+					break;
 				case 0:
 					System.out.println("Saindo do sistema...");
 					break;

@@ -6,6 +6,7 @@ public class Acervo {
 	//instanciando a classe GerenciandorDeLivro
 	GerenciadorDeLivro gerenciadorDeLivro = new GerenciadorDeLivro();
 	GerenciadorDeRevista gerenciadorDeRevista = new GerenciadorDeRevista();
+	GerenciadorDeUsuario gerenciadorDeUsuario = new GerenciadorDeUsuario();
 	private Scanner sc = new Scanner(System.in);
 	
 	private String nome;
@@ -38,4 +39,11 @@ public class Acervo {
 	public void listarTodosRevistas() {
 		gerenciadorDeRevista.exibirTodasRevistas();
 	}
+	public void cadastrarUsuario(Usuario usuario) {
+		gerenciadorDeUsuario.salvarUsuario( usuario);
+	}
+	public void listarUsuarios(){
+		gerenciadorDeUsuario.exibirUsuarios();
+	}
+	
 }

@@ -7,11 +7,11 @@ import java.util.Scanner;
 public class GerenciadorDeLivro {
 	private List<Livro> livros;
 	
-	//contrutor
-	public GerenciadorDeLivro() {
+	//construtor
+	GerenciadorDeLivro() {
 		livros = new ArrayList<>();
 	}
-	
+
 	public void salvarLivro(Livro livro) {
 		livros.add(livro);
 	}
